@@ -1,0 +1,5 @@
+<app-home
+  [users]="users$ | async"
+  [isLoading]="isLoading$ | async"
+  (goToNextPage)="seeMoreInfo()"
+></app-home>

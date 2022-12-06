@@ -1,0 +1,32 @@
+.page-container {
+  max-width: 800px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.example-card {
+  margin: 12px;
+  width: 250px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.btn {
+  width: 400px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: -webkit-fill-available;
+}

@@ -1,0 +1,15 @@
+<header>
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>User App</span>
+    <span class="example-spacer"></span>
+    <button (click)="logUser()"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <span>{{ auth.isLogged() ? 'Logout' : 'Login' }}</span>
+    </button>
+  </mat-toolbar>
+</header>
+<body class="content">
+   <router-outlet></router-outlet>
+</body>
