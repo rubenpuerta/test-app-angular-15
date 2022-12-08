@@ -5,11 +5,11 @@ export interface reqresResponse {
   per_page:    number;
   total:       number;
   total_pages: number;
-  data:        UserData[];
+  data:        ReqresUserData[];
   support:     Support;
 }
 
-export interface UserData {
+export interface ReqresUserData {
   id:         number;
   email:      string;
   first_name: string;

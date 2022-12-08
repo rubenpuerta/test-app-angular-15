@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/interfaces';
 
-import { FakeApiService } from 'src/app/services';
+// import { ReqresApiService } from 'src/app/services';
+import { ApiInfo } from '../interfaces/api-info.interface';
+import { GhipyApiService } from './giphy-api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfoService {
 
-  constructor(private infoService: FakeApiService) { }
+  constructor(private infoService: GhipyApiService) { }
 
-  getUsers(): Observable<User[]> {
+  getUsers(): Observable<ApiInfo[]> {
     return this.infoService.get();
   }
 }

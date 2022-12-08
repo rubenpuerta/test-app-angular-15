@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { ApiInfo } from 'src/app/interfaces';
+import { ApiState, selectData } from 'src/app/store/api.reducer';
 
-import { User } from 'src/app/interfaces';
-import { selectUsers, UserState } from 'src/app/store/fake-api.reducer';
 import { selectIsLoading } from 'src/app/store/ui.reducer';
 import * as NavigationActions from '../../store/navigation.actions';
 
@@ -13,11 +13,11 @@ import * as NavigationActions from '../../store/navigation.actions';
   styleUrls: ['./home-container.component.scss']
 })
 export class HomeContainerComponent {
-  public users$: Observable<User[]>;
+  public data$: Observable<ApiInfo[]>;
   public isLoading$: Observable<boolean>;
 
-  constructor(private store: Store<UserState>) { 
-    this.users$ = this.store.select(selectUsers);
+  constructor(private store: Store<ApiState>) { 
+    this.data$ = this.store.select(selectData);
     this.isLoading$ = this.store.select(selectIsLoading);
   }
 

@@ -6,17 +6,19 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LetModule } from '@ngrx/component';
+import { NgOptimizedImage } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from 'src/app/shared';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { environment } from '../environments/environment';
-import { FakeApiEffects } from 'src/app/store/fake-api.effects';
 import { HomeContainerComponent } from 'src/app/components/home-container/home-container.component';
 import { ROOT_REDUCERS } from 'src/app/store/app.reducer';
 import { UIEffects } from 'src/app/store/ui.effects';
 import { NavigationEffects } from 'src/app/store/navigation.effects';
+import { ApiEffects } from 'src/app/store/api.effects';
+
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { NavigationEffects } from 'src/app/store/navigation.effects';
     BrowserAnimationsModule,
     MaterialModule,
     LetModule,
+    NgOptimizedImage,
     StoreModule.forRoot(ROOT_REDUCERS),
-    EffectsModule.forRoot([FakeApiEffects, UIEffects, NavigationEffects]),
+    EffectsModule.forRoot([ApiEffects, UIEffects, NavigationEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],

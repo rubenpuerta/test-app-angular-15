@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { User} from 'src/app/interfaces';
+import { ApiInfo } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { User} from 'src/app/interfaces';
 })
 export class HomeComponent {
   @Input()
-  public users: User[] | null = [];
+  public data: ApiInfo[] | null = [];
   @Input()
   public isLoading: boolean | null = false;
 

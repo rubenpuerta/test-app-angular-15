@@ -1,2 +1,3 @@
 export * from './reqres.interface';
-export * from './user.interface'
+export * from './api-info.interface';
+export * from './ghipy.interface';
