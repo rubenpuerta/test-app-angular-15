@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [MoreInfoComponent]
 })
-export class MoreInfoModule {}
+export default class MoreInfoModule {}

@@ -17,7 +17,7 @@ export class GhipyApiService {
 
 
   get(): Observable<ApiInfo[]> {
-    return this.http.get<GhipyResponse>(`https://api.giphy.com/v1/gifs/trending?api_key=${GHIPY_API_KEY}&limit=25&rating=g`).pipe(
+    return this.http.get<GhipyResponse>(`https://api.giphy.com/v1/gifs/trending?api_key=${GHIPY_API_KEY}&limit=15&rating=g`).pipe(
       delay(500),
       map(({ data }) => data.map(({ title, images }) => ({
         description: title,
