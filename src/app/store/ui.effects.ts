@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { MatLegacySnackBar as MatSnackBar, MatLegacySnackBarConfig as MatSnackBarConfig } from '@angular/material/legacy-snack-bar';
+import { } from '@angular/material/legacy-snack-bar';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
-import * as FakeApiActions from './fake-api.actions';
+import * as FakeApiActions from './api.actions';
 import * as UIActions from './ui.actions';
 import * as NavigationActions from './navigation.actions';
 import { AuthService } from '../services/auth.service';

@@ -6,10 +6,10 @@ import { MoreInfoGuardGuard } from 'src/app/guard/more-info-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', title: 'User app - home', component: HomeContainerComponent },
+  { path: 'home', title: 'App - home', component: HomeContainerComponent },
   {
     path: 'more-info',
-    title: 'User app - More info',
+    title: 'App - More info',
     canActivate: [MoreInfoGuardGuard],
     loadChildren: () => import('./pages/+more-info/more-info.module').then((m) => m.MoreInfoModule)
   },

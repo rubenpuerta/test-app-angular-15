@@ -9,9 +9,24 @@
   justify-content: space-around;
 }
 
+.imagewrapper {
+  width: 250px;
+  height: 250px;
+}
+
+img {
+  object-fit: cover;
+}
+
 .example-card {
   margin: 12px;
   width: 250px;
+  color: white;
+}
+
+mat-card-title {
+  text-transform: capitalize;
+  font-size: 14px;
 }
 
 .actions {

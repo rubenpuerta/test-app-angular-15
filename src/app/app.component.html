@@ -3,10 +3,11 @@
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>User App</span>
+    <span>App</span>
     <span class="example-spacer"></span>
-    <button (click)="logUser()"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <span>{{ auth.isLogged() ? 'Logout' : 'Login' }}</span>
+    <button (click)="logUser()" mat-raised-button color="accent" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>{{auth.isLogged() ? 'logout' : 'login'}}</mat-icon>
+      <span>{{ auth.isLogged() ? 'logout' : 'login' }}</span>
     </button>
   </mat-toolbar>
 </header>
