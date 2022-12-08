@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { inject, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeContainerComponent } from 'src/app/components/home-container/home-container.component';
-import { MoreInfoGuardGuard } from 'src/app/guard/more-info-guard.guard';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,15 +10,14 @@ const routes: Routes = [
   {
     path: 'more-info',
     title: 'App - More info',
-    canActivate: [MoreInfoGuardGuard],
-    loadChildren: () => import('./pages/+more-info/more-info.module').then((m) => m.MoreInfoModule)
+    canActivate: [() => inject(AuthService).isLogged()],
+    loadChildren: () => import('./pages/+more-info/more-info.module')
   },
   { path: '**', component: HomeContainerComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [MoreInfoGuardGuard]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

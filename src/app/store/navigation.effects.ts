@@ -15,7 +15,6 @@ export class NavigationEffects {
   public loadData$ = createEffect(() => 
     this.action$.pipe(
       ofType(NavigationActions.navigateToNextPage),
-      tap(console.log),
       tap(() => this.router.navigate(['more-info']))
     ), { dispatch: false})
 }
