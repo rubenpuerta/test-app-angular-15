@@ -1,1 +1,1 @@
-export * from './angular-modules';
+export * from './material-modules';

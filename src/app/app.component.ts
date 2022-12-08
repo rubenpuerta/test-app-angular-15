@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
+import { ApiState } from 'src/app/store/api.reducer';
 import { AuthService } from './services/auth.service';
-import { UserState } from './store/fake-api.reducer';
-import * as FakeApiActions from '../app/store/fake-api.actions';
+import * as ApiActions from './store/api.actions';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,8 @@ import * as FakeApiActions from '../app/store/fake-api.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService, private store: Store<UserState>) { 
-    this.store.dispatch(FakeApiActions.loadData());
+  constructor(public auth: AuthService, private store: Store<ApiState>) { 
+    this.store.dispatch(ApiActions.loadData());
   }
   
   logUser() {

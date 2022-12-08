@@ -1,6 +1,5 @@
-import { Action, createFeature, createReducer, on, State } from '@ngrx/store';
+import { createFeature, createReducer, on } from '@ngrx/store';
 
-import { User } from 'src/app/interfaces';
 import * as UIActions from './ui.actions'
 
 

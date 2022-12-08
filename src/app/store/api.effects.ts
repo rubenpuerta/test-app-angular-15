@@ -5,21 +5,21 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 
 
 import { InfoService } from '../services/info.service';
-import * as FakeApiActions from './fake-api.actions';
+import * as ApiActions from './api.actions';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FakeApiEffects {
+export class ApiEffects {
 
   constructor(private action$: Actions, private infoService: InfoService) { }
 
   public loadData$ = createEffect(() => 
     this.action$.pipe(
-      ofType(FakeApiActions.loadData),
+      ofType(ApiActions.loadData),
       switchMap(() => this.infoService.getUsers().pipe(
-        map((users) => FakeApiActions.loadDataSuccess({ users })),
-        catchError(() => of(FakeApiActions.loadDataError()) )
+        map((data) => ApiActions.loadDataSuccess({ data })),
+        catchError(() => of(ApiActions.loadDataError()) )
       )))
     )
 }

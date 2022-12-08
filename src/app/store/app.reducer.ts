@@ -2,12 +2,12 @@ import { InjectionToken } from '@angular/core';
 import { Action, ActionReducerMap } from '@ngrx/store';
 
 import * as uiReducer from 'src/app/store/ui.reducer';
-import * as fakeApiReducer from 'src/app/store/fake-api.reducer';
+import * as apiReducer from 'src/app/store/api.reducer';
 
 
 export interface AppState {
   [uiReducer.name]: uiReducer.UIState;
-  [fakeApiReducer.name]: fakeApiReducer.UserState;
+  [apiReducer.name]: apiReducer.ApiState
 }
 
 export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Action>>(
@@ -15,7 +15,7 @@ export const ROOT_REDUCERS = new InjectionToken<ActionReducerMap<AppState, Actio
   {
     factory: () => ({
       [uiReducer.name]: uiReducer.reducer,
-      [fakeApiReducer.name]: fakeApiReducer.reducer
+      [apiReducer.name]: apiReducer.reducer
     })
   }
 );
