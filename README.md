@@ -4,13 +4,12 @@
   
   **version: 16.13**
 
-  ## **Step branches**
-  
-  
-  + ### **main**
+  ## **Commits**
+    
+  + ### **initial commit**
     + Dummy project made in Angular 14 and NGRX 14
 
-  + ### **improvement-1-update-angular-and-ngrx-to-version-15**
+  + ### **update-angular-and-ngrx-to-version-15**
     + ``` npm i -g @angular/cli@latest ```
   
     + ``` ng update ```
@@ -24,7 +23,7 @@
 
   + ### **new-image-directive**
     
-     [Video - New Image Directives in Angular v15](https://www.youtube.com/watch?v=uE4GM3sKsgk)
+    [Video - New Image Directives in Angular v15](https://www.youtube.com/watch?v=uE4GM3sKsgk)
 
     ``` 
       import { NgOptimizedImage } from '@angular/common';
@@ -35,5 +34,7 @@
       class AppModule {}
      ```
   + ### **router-changes**
+  + ### **esbuild**
+    [Video - More Angular updates in Angular v15](https://www.youtube.com/watch?v=wzzHYojJqEs)
   
      
