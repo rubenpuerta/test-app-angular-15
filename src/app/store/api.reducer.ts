@@ -19,6 +19,8 @@ const fakeApiReducer = createReducer(
   }),
 );
 
+// https://ngrx.io/api/store/createFeature
+
 export const fakeApiFeature = createFeature({
   name: 'users',
   reducer: fakeApiReducer

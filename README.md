@@ -4,6 +4,9 @@
   
   **version: 16.13**
 
+  ## **Angular v15 Launch Event**
+  [Live with the Angular Team](https://www.youtube.com/watch?v=j2_NnV7nU6s)
+
   ## **Commits**
     
   + ### **initial commit**
@@ -36,5 +39,14 @@
   + ### **router-changes**
   + ### **esbuild**
     [Video - More Angular updates in Angular v15](https://www.youtube.com/watch?v=wzzHYojJqEs)
+
+  + ### **ngrx-changes**
+    + Using inject function
+    + @ngrx/store
+      + [createFeature](https://ngrx.io/api/store/createFeature)
+      + [createActionGroup](https://ngrx.io/api/store/createActionGroup)
+    + @ngrx/component
+      + [LetDirective](https://ngrx.io/api/component/LetDirective)
+      + [PushPipe](https://ngrx.io/api/component/PushPipe)
   
      

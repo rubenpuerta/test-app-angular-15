@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { LetModule } from '@ngrx/component';
+import { LetModule, PushModule } from '@ngrx/component';
 import { NgOptimizedImage } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,7 @@ import { ApiEffects } from 'src/app/store/api.effects';
     BrowserAnimationsModule,
     MaterialModule,
     LetModule,
+    PushModule,
     NgOptimizedImage,
     StoreModule.forRoot(ROOT_REDUCERS),
     EffectsModule.forRoot([ApiEffects, UIEffects, NavigationEffects]),

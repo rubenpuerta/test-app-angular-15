@@ -4,10 +4,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .errorAlertMessage {
-  background-color: #F47575;
-  color: white;
+  --mdc-snackbar-container-color: #cc3300;
+  --mdc-snackbar-supporting-text-color: white;
+  --mat-mdc-snack-bar-button-color: white;
 }
 
 .warningAlertMessage {
-  background-color: #FFEBA1;
+  --mdc-snackbar-container-color: #FFEBA1;
+  --mdc-snackbar-supporting-text-color: black;
 }

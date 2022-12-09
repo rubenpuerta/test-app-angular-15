@@ -11,13 +11,21 @@ import * as ApiActions from './store/api.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  // public auth = inject(AuthService);
+  // private loadData = injectAction(ApiActions.loadApiData);
+
   constructor(public auth: AuthService, private store: Store<ApiState>) { 
     this.store.dispatch(ApiActions.loadData());
   }
-  
+
+  // constructor() {
+  //   this.loadData();
+  // }
+      
   logUser() {
     this.auth.isLogged()
       ? this.auth.logout()
       : this.auth.login();
   }
 }
+

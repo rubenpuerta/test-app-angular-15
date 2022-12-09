@@ -3,3 +3,60 @@
   [isLoading]="isLoading$ | async"
   (goToNextPage)="seeMoreInfo()"
 ></app-home>
+
+<!--
+  Push Pipe
+
+  https://ngrx.io/guide/component 
+  https://ngrx.io/guide/component/push
+-->
+
+<!-- Multiple observables 
+  <code>
+    {{ { data: data$, isLoading: isLoading$ } | ngrxPush | json }}
+  </code>
+-->
+
+
+<!--
+  Let Directive
+
+  https://ngrx.io/guide/component 
+  https://ngrx.io/guide/component/let
+-->
+
+<!-- Tracking Different Observable Events 
+
+  <ng-container *ngrxLet="isLoading$ as n; error as e; complete as c">
+    <input type="text" [value]="n" *ngIf="!e && !c">
+    
+    <p *ngIf="e">There is an error: {{ e }}</p>
+    <p *ngIf="c">Observable is completed.</p>
+  </ng-container>
+-->
+
+<!-- Combining Multiple Observables 
+<ng-container *ngrxLet="{ data: data$, isLoading: isLoading$ } as combined">
+  <code style="color:blue">{{ combined.data | json }}</code>
+  <br/><br/>
+  <code style="color:red">{{ combined.isLoading | json }}</code>
+  <br/><br/>
+  <code>{{ combined | json }}</code>
+</ng-container>
+-->
+
+<!-- Using Suspense Template
+<ng-container *ngrxLet="isLoading$ as isLoading; suspenseTpl: loading">
+  <code>{{ isLoading }}</code>
+</ng-container>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+ -->
+
+ <!-- Using Aliases for Non-Observable Values 
+ <ng-container *ngrxLet="test.data.name as name">
+  {{ name }}
+</ng-container>
+-->

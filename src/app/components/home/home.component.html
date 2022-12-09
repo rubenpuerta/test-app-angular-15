@@ -8,61 +8,9 @@
       <mat-card-header>
         <mat-card-title>{{ info.description }}</mat-card-title>
       </mat-card-header>
-
-      <img mat-card-image [src]="info.image" alt="Photo">
-
-      <!-- 
-        VM387:3106 ERROR Error: 
-          NG02954: The NgOptimizedImage directive (activated on an <img> 
-          element with the `ngSrc="")
-          has detected that these required attributes are missing: "width", "height".
-          Including "width" and "height" attributes will prevent image-related layout 
-          shifts. To fix this, include "width" and "height" attributes on the image tag
-          or turn on "fill" mode with the `fill` attribute. 
- 
-          <img mat-card-image [ngSrc]="info.image" alt="Photo">
-      -->
-
-      <!-- 
-        NgOptimizedImage directive (activated on an <img> element with the `ngSrc=""`)
-         has detected that the aspect ratio of the rendered image does not match the image's intrinsic aspect ratio. 
-        Intrinsic image size: 128w x 128h (aspect-ratio: 1). 
-        Rendered image size: 282w x 250h (aspect-ratio: 1.128). 
-        This issue can occur if "width" and "height" attributes are added to an image without updating the corresponding image styling. To fix this, adjust image styling. In most cases, adding "height: auto" or "width: auto" to the image styling will fix this issue.
-             
-        <img mat-card-image [ngSrc]="info.image" width="250" height="250" alt="Photo">
-      -->
-
-      <!-- 
-        common.mjs:5984 NG02955: 
-        The NgOptimizedImage directive (activated on an <img> element with the `ngSrc=""`)
-        has detected that this image is the Largest Contentful Paint (LCP) element but 
-        was not marked "priority". This image should be marked "priority" in order to prioritize its 
-        loading. To fix this, add the "priority" attribute. 
-
-        <div mat-card-image class="imagewrapper" >
-          <img  [ngSrc]="info.image" fill alt="Photo">
-        </div>
-      -->
-
-      <!--
-        NG02956: The NgOptimizedImage directive (activated on an <img> element with the `ngSrc=""`)
-        has detected that there is no preconnect tag present for this image. Preconnecting to the origin(s) that serve priority images
-        ensures that these images are delivered as soon as possible.
-        To fix this, please add the following element into the <head> of the document:
-      
-        <div mat-card-image class="imagewrapper" >
-          <img [ngSrc]="info.image" fill priority alt="Photo">
-        </div>
-      -->
-  
-    <!--
-      Final approach
-          
       <div mat-card-image class="imagewrapper" >
         <img [ngSrc]="info.image" fill priority alt="Photo">
       </div> 
-    -->  
     </mat-card>
   </div>
   <div class="actions">
